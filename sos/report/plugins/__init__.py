@@ -944,7 +944,7 @@ class Plugin(object):
         try:
             path = self._get_dest_for_srcpath(srcpath)
             pattern = regexp.pattern if hasattr(regexp, "pattern") else regexp
-            self._log_debug("substituting scrpath '%s'" % srcpath)
+            self._log_debug("substituting srcpath '%s'" % srcpath)
             self._log_debug("substituting '%s' for '%s' in '%s'"
                             % (subst, pattern, path))
             if not path:

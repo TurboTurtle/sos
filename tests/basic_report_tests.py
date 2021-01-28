@@ -21,7 +21,7 @@ class NormalSoSReport(StageOneReportTest):
         self.assertSosLogContains('DEBUG')
 
     def test_postproc_called(self):
-        self.assertSosLogContains('substituting')
+        self.assertSosLogContains('substituting srcpath')
 
     def test_label_applied_to_archive(self):
         self.assertTrue('thisismylabel' in self.archive)
@@ -49,7 +49,7 @@ class RestrictedSoSReport(StageOneReportTest):
         self.assertOutputNotContains('Finishing plugins')
 
     def test_postproc_not_called(self):
-        self.assertOutputNotContains('substituting')
+        self.assertOutputNotContains('substituting srcpath')
 
     def test_only_selected_plugins_run(self):
         self.assertOnlyPluginsIncluded(['kernel', 'host', 'sudo', 'hardware', 'dbus', 'x11'])
